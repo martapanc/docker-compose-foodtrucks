@@ -10,8 +10,10 @@ services:
     volumes:
       - esdata1:/usr/share/elasticsearch/data
   web:
-    image: prakhar1989/foodtrucks-web
+    build: . # compile local build instead of image
     command: python3 app.py
+    environment:
+      - DEBUG=True # env var for Flask
     depends_on:
       - es
     ports:

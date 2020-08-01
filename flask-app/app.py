@@ -116,6 +116,11 @@ def search():
         "status": "success"
     })
 
+@app.route('/hello')
+def hello():
+    return "Hello world!"
+
+
 if __name__ == "__main__":
     ENVIRONMENT_DEBUG = os.environ.get("DEBUG", False)
     check_and_load_index()
